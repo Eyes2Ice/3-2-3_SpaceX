@@ -1,12 +1,24 @@
 import "@mantine/core/styles.css";
 import ky from "ky";
 import { Container, Group, MantineProvider, Title } from "@mantine/core";
-import { useEffect } from "react";
+import { useEffect, useReducer } from "react";
+
+interface Launch {
+  mission_patch: string;
+  mission_patch_small: string;
+  mission_name: string;
+  rocket_name: string;
+  details: string;
+}
+
+function reducer() {}
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   useEffect(() => {
     async function getLaunches() {
-      const launches = await ky(
+      const launches: Launch = await ky(
         "https://kata-spacex.onrender.com/api/launches ",
       ).json();
     }
