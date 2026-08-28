@@ -36,7 +36,7 @@ function Modal({
 
   return createPortal(
     <>
-      <Box className={styles.modal}>
+      <Box className={styles.modal} data-testid="modal">
         <Group className={styles["modal__top"]}>
           <Title order={2} fz={"lg"} fw={500}>
             {mission_name}
@@ -59,7 +59,7 @@ function Modal({
           <Text className={styles["modal__text"]}>{details}</Text>
         </Group>
       </Box>
-      <Overlay onClick={onClose} />
+      <Overlay data-testid="overlay" onClick={onClose} />
     </>,
 
     modalElement,

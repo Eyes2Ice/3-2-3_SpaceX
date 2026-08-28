@@ -111,6 +111,7 @@ function App() {
           {state.launchesList.map((launch) => {
             return (
               <Card
+                data-testid="launch-card"
                 key={launch.mission_name}
                 component="li"
                 shadow="sm"
@@ -125,6 +126,7 @@ function App() {
                 <Title order={3}>{launch.mission_name}</Title>
                 <Text opacity={0.5}>{launch.rocket.rocket_name}</Text>
                 <Button
+                  data-testid="launch-button"
                   fullWidth
                   fz="md"
                   mt="15px"
